@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title> Mini site Flask pour interagir avec un modèle IA</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .response {
+            margin-top: 20px;
+            background: #f4f4f4;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mini projet AI </h1>
+
+<form method="POST">
+    <textarea name="prompt" rows="4" placeholder="Écris ton message..."></textarea>
+    <button type="submit">Envoyer</button>
+</form>
+
+{% if response_text %}
+<div class="response">
+    <h3>Réponse :</h3>
+    <p>{{ response_text }}</p>
+</div>
+{% endif %}
+
+</body>
+</html>
